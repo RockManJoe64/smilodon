@@ -1,3 +1,5 @@
+![xolhut logo](https://github.com/AptDevCode/xolhut/blob/init-lucky-framework/xolhut.png?raw=true)
+
 # xolhut
 
 A federated social media server using ActivityPub!
