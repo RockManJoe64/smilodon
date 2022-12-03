@@ -1,18 +1,19 @@
 # xolhut
 
-Another federated social media server using ActivityPub!
+A federated social media server using ActivityPub!
 
-## Installation
+This is a project written using [Lucky](https://luckyframework.org). Enjoy!
 
-TODO: Write installation instructions here
+### Setting up the project
 
-## Usage
+1. [Install required dependencies](https://luckyframework.org/guides/getting-started/installing#install-required-dependencies)
+1. Update database settings in `config/database.cr`
+1. Run `script/setup`
+1. Run `lucky dev` to start the app
 
-TODO: Write usage instructions here
+### Learning Lucky
 
-## Development
-
-TODO: Write development instructions here
+Lucky uses the [Crystal](https://crystal-lang.org) programming language. You can learn about Lucky from the [Lucky Guides](https://luckyframework.org/guides/getting-started/why-lucky).
 
 ## Contributing
 
