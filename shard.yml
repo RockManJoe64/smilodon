@@ -1,4 +1,4 @@
-name: xolhut
+name: smilodon
 version: 0.1.0
 
 authors:
@@ -6,7 +6,7 @@ authors:
 
 targets:
   app:
-    main: src/xolhut.cr
+    main: src/smilodon.cr
 
 crystal: 1.6.2
 

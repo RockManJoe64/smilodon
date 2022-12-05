@@ -1,4 +1,4 @@
-database_name = "xolhut_#{LuckyEnv.environment}"
+database_name = "smilodon_#{LuckyEnv.environment}"
 
 AppDatabase.configure do |settings|
   if LuckyEnv.production?

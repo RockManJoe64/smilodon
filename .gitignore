@@ -2,4 +2,8 @@
 /lib/
 /bin/
 /.shards/
+/tmp/
+/public/css/
+/public/js/
+/public/mix-manifest.json
 *.dwarf

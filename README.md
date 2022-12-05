@@ -1,6 +1,6 @@
-![xolhut logo](https://github.com/AptDevCode/xolhut/blob/init-lucky-framework/xolhut.png?raw=true)
+![smilodon logo](https://github.com/AptDevCode/smilodon/blob/init-lucky-framework/smilodon.png?raw=true)
 
-# xolhut
+# smilodon
 
 A federated social media server using ActivityPub!
 
@@ -19,7 +19,7 @@ Lucky uses the [Crystal](https://crystal-lang.org) programming language. You can
 
 ## Contributing
 
-1. Fork it (<https://github.com/your-github-user/xolhut/fork>)
+1. Fork it (<https://github.com/your-github-user/smilodon/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)

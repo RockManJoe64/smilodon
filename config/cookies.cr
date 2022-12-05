@@ -1,7 +1,7 @@
 require "./server"
 
 Lucky::Session.configure do |settings|
-  settings.key = "_xolhut_session"
+  settings.key = "_smilodon_session"
 end
 
 Lucky::CookieJar.configure do |settings|
