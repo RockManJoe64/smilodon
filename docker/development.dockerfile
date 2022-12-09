@@ -1,8 +1,8 @@
-FROM crystallang/crystal:1.4.1
+FROM crystallang/crystal:1.6.1
 
 # Install utilities required to make this Dockerfile run
 RUN apt-get update && \
-    apt-get install -y wget gunzip
+  apt-get install -y wget build-essential zlib1g-dev
 
 # Add the nodesource ppa to apt. Update this to change the nodejs version.
 RUN wget https://deb.nodesource.com/setup_16.x -O- | bash
@@ -12,8 +12,8 @@ RUN wget https://deb.nodesource.com/setup_16.x -O- | bash
 # - Postgres cli tools are required for lucky-cli.
 # - tmux is required for the Overmind process manager.
 RUN apt-get update && \
-    apt-get install -y nodejs postgresql-client tmux && \
-    rm -rf /var/lib/apt/lists/*
+  apt-get install -y nodejs postgresql-client tmux && \
+  rm -rf /var/lib/apt/lists/*
 
 # NPM global installs:
 #  - Yarn is the default package manager for the node component of a lucky
@@ -23,18 +23,21 @@ RUN npm install -g yarn mix
 
 # Installs overmind, not needed if nox is the process manager.
 RUN wget https://github.com/DarthSim/overmind/releases/download/v2.2.2/overmind-v2.2.2-linux-amd64.gz && \
-    gunzip overmind-v2.2.2-linux-amd64.gz && \
-    mv overmind-v2.2.2-linux-amd64 /usr/bin/overmind && \
-    chmod +x /usr/bin/overmind
+  gunzip overmind-v2.2.2-linux-amd64.gz && \
+  mv overmind-v2.2.2-linux-amd64 /usr/bin/overmind && \
+  chmod +x /usr/bin/overmind
+
+# Fix for libssl.so.3 unable to open
+RUN ln -s /usr/lib/x86_64-linux-gnu/libssl.so.3 /usr/local/lib/libssl.so.3 && \ 
+  ldconfig
 
 # Install lucky cli, TODO: fetch current lucky version from source code.
 WORKDIR /lucky/cli
 RUN git clone https://github.com/luckyframework/lucky_cli . && \
-    git checkout v0.30.0 && \
-    shards build --without-development && \
-    cp bin/lucky /usr/bin
+  git checkout v0.30.0 && \
+  shards build --without-development && \
+  cp bin/lucky /usr/bin
 
 WORKDIR /app
 ENV DATABASE_URL=postgres://postgres:postgres@host.docker.internal:5432/postgres
-EXPOSE 5001
-
+EXPOSE 3001

@@ -19,7 +19,7 @@ services:
     depends_on:
       - postgres
     ports:
-      - 5001:5001
+      - 3001:3001
 
     entrypoint: ["docker/dev_entrypoint.sh"]
 
