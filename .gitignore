@@ -8,4 +8,5 @@
 /public/js/
 /public/mix-manifest.json
 *.dwarf
+node_modules
 .env
