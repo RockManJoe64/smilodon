@@ -1,13 +1,41 @@
-name: xolhut
+name: smilodon
 version: 0.1.0
 
 authors:
   - Jose Chavez <jose.e.chavez@gmail.com>
 
 targets:
-  xolhut:
-    main: src/xolhut.cr
+  app:
+    main: src/smilodon.cr
 
 crystal: 1.6.2
 
-license: MIT
+dependencies:
+  lucky:
+    github: luckyframework/lucky
+    version: ~> 1.0.0
+  avram:
+    github: luckyframework/avram
+    version: ~> 1.0.0
+  carbon:
+    github: luckyframework/carbon
+    version: ~> 0.3.0
+  carbon_sendgrid_adapter:
+    github: luckyframework/carbon_sendgrid_adapter
+    version: ~> 0.3.0
+  lucky_env:
+    github: luckyframework/lucky_env
+    version: ~> 0.1.4
+  lucky_task:
+    github: luckyframework/lucky_task
+    version: ~> 0.1.1
+  authentic:
+    github: luckyframework/authentic
+    version: ~> 1.0.0
+  jwt:
+    github: crystal-community/jwt
+    version: ~> 1.6.0
+development_dependencies:
+  lucky_flow:
+    github: luckyframework/lucky_flow
+    version: ~> 0.9.0

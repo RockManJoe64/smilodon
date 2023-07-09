@@ -1,22 +1,25 @@
-# xolhut
+![smilodon logo](https://github.com/AptDevCode/smilodon/blob/init-lucky-framework/smilodon.png?raw=true)
 
-Another federated social media server using ActivityPub!
+# smilodon
 
-## Installation
+A federated social media server using ActivityPub!
 
-TODO: Write installation instructions here
+This is a project written using [Lucky](https://luckyframework.org). Enjoy!
 
-## Usage
+### Setting up the project
 
-TODO: Write usage instructions here
+1. [Install required dependencies](https://luckyframework.org/guides/getting-started/installing#install-required-dependencies)
+1. Update database settings in `config/database.cr`
+1. Run `script/setup`
+1. Run `lucky dev` to start the app
 
-## Development
+### Learning Lucky
 
-TODO: Write development instructions here
+Lucky uses the [Crystal](https://crystal-lang.org) programming language. You can learn about Lucky from the [Lucky Guides](https://luckyframework.org/guides/getting-started/why-lucky).
 
 ## Contributing
 
-1. Fork it (<https://github.com/your-github-user/xolhut/fork>)
+1. Fork it (<https://github.com/your-github-user/smilodon/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
