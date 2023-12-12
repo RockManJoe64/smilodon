@@ -1,2 +1,3 @@
 require "spec"
-require "../src/xolhut"
+require "spec-kemal"
+require "../src/smilodon"
