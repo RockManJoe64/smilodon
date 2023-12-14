@@ -1,4 +1,5 @@
 require "./../spec_helper"
+require "./../../src/webfinger/webfinger_handler"
 
 include Smilodon::Webfinger
 

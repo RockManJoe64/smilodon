@@ -8,7 +8,6 @@ module Smilodon::Webfinger
       get "/.well-known/webfinger" do |env|
         host = env.request.headers["Host"]
         resource = env.params.query["resource"]
-        puts "Webfinger request for #{resource} at #{host}"
         account = @webfinger_handler.find_account(host, resource)
         if account.nil?
           halt env, status_code: 404, response: "Account Not Found"
