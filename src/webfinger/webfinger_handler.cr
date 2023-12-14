@@ -1,16 +1,34 @@
+require "./../user/user_repository"
+
 module Smilodon::Webfinger
   class WebfingerHandler
+    def initialize(@repository : UserRepository)
+    end
+
     def find_account(resource : String) : String?
-      # TODO: implement
-      username = resource.gsub("acct:", "")
-      if resource.includes? "captain_america"
+      account_name = resource.gsub("acct:", "")
+      tokens = account_name.split("@")
+      username = tokens[0]
+      domain = tokens[1]
+      user = @repository.find(username)
+
+      if user
         return {
-          "subject": username,
+          "subject": "#{user.username}@#{domain}",
           "links":   [
             {
               "rel":  "self",
               "type": "application/activity+json",
-              "href": "https://marvel.social/users/#{username.split('@')[0]}",
+              "href": "https://#{domain}/users/#{user.username}",
+            },
+            {
+              "rel":  "http://webfinger.net/rel/profile-page",
+              "type": "text/html",
+              "href": "https://#{domain}/#{user.username}",
+            },
+            {
+              "rel":      "http://ostatus.org/schema/1.0/subscribe",
+              "template": "https://#{domain}/authorize_interaction?uri={uri}",
             },
           ],
         }.to_json

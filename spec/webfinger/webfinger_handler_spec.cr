@@ -1,10 +1,12 @@
 require "../spec_helper"
+require "../../src/user/user_repository"
 require "../../src/webfinger/webfinger_handler"
 
 include Smilodon::Webfinger
+include Smilodon::User
 
 describe WebfingerHandler do
-  handler = WebfingerHandler.new
+  handler = WebfingerHandler.new(InMemoryUserRepository.new)
 
   describe "#find_account" do
     it "should return a valid webfinger response" do
