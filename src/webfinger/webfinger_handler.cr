@@ -7,16 +7,14 @@ module Smilodon::Webfinger
 
     def find_account(resource : String) : String?
       account_name = resource.gsub("acct:", "")
-      tokens = account_name.split("@")
-      username = tokens[0]
-      domain = tokens[1]
+      username, domain = account_name.split("@")
       user = @repository.find(username)
 
       if user
         return {
           "subject": "acct:#{user.username}@#{domain}",
           "aliases": [
-            "https://#{domain}/#{user.username}",
+            "https://#{domain}/@#{user.username}",
             "https://#{domain}/users/#{user.username}",
           ],
           "links": [
@@ -28,7 +26,7 @@ module Smilodon::Webfinger
             {
               "rel":  "http://webfinger.net/rel/profile-page",
               "type": "text/html",
-              "href": "https://#{domain}/#{user.username}",
+              "href": "https://#{domain}/@#{user.username}",
             },
             {
               "rel":      "http://ostatus.org/schema/1.0/subscribe",
