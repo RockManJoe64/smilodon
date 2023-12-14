@@ -2,7 +2,7 @@ require "./user"
 
 module Smilodon::User
   abstract class UserRepository
-    abstract def find(id : Int32) : User?
+    abstract def find(username : String) : User?
   end
 
   class InMemoryUserRepository < UserRepository
@@ -12,10 +12,6 @@ module Smilodon::User
         User.new(2, "iron_man"),
         User.new(3, "thor"),
       ]
-    end
-
-    def find(id : Int32) : User?
-      @users[id]
     end
 
     def find(username : String) : User?
