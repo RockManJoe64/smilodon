@@ -16,6 +16,7 @@ module Smilodon::Webfinger
           halt env, status_code: 404, response: "Account Not Found"
         end
 
+        env.response.headers["Access-Control-Allow-Origin"] = "*"
         env.response.content_type = "application/jrd+json"
         account.to_json
       end

@@ -14,6 +14,12 @@ describe WebfingerResource do
       response.body.should_not be_nil
     end
 
+    it "returns OK with CORS enabled" do
+      get "/.well-known/webfinger?resource=acct:captain_america@marvel.social"
+      response.status_code.should eq 200
+      response.headers["Access-Control-Allow-Origin"].should eq "*"
+    end
+
     it "returns Bad Request" do
       get "/.well-known/webfinger?useraccount=acct:red_skull@marvel.social"
       response.status_code.should eq 400
