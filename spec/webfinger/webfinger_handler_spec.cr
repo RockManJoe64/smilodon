@@ -10,8 +10,16 @@ describe WebfingerHandler do
 
   describe "#find_account" do
     it "should return a valid webfinger response" do
-      response = handler.find_account("acct:captain_america@marvel.social")
+      resource = "acct:captain_america@marvel.social"
+      response = handler.find_account(resource)
       response.should_not be_nil
+      account = response.as(NamedTuple)
+      account[:subject].should eq resource
+      account[:aliases].should eq [
+        "https://marvel.social/@captain_america",
+        "https://marvel.social/users/captain_america",
+      ]
+      # TODO: Validate links
     end
 
     it "should return nil" do
