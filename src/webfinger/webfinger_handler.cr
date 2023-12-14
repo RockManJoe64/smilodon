@@ -1,9 +1,9 @@
 module Smilodon::Webfinger
   class WebfingerHandler
-    def find_account(hostname : String, resource : String)
+    def find_account(resource : String) : String?
       # TODO: implement
       username = resource.gsub("acct:", "")
-      if resource.includes? "marvel"
+      if resource.includes? "captain_america"
         return {
           "subject": username,
           "links":   [
