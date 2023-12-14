@@ -14,8 +14,12 @@ module Smilodon::Webfinger
 
       if user
         return {
-          "subject": "#{user.username}@#{domain}",
-          "links":   [
+          "subject": "acct:#{user.username}@#{domain}",
+          "aliases": [
+            "https://#{domain}/#{user.username}",
+            "https://#{domain}/users/#{user.username}",
+          ],
+          "links": [
             {
               "rel":  "self",
               "type": "application/activity+json",
