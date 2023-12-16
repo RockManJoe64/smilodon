@@ -1,4 +1,4 @@
-name: xolhut
+name: smilodon
 version: 0.1.0
 license: MIT
 
@@ -8,11 +8,11 @@ authors:
 crystal: 1.6.2
 
 dependencies:
-  spec-kemal:
-    github: kemalcr/spec-kemal
   kemal:
     github: kemalcr/kemal
+  spec-kemal:
+    github: kemalcr/spec-kemal
 
 targets:
-  xolhut:
-    main: src/xolhut.cr
+  smilodon:
+    main: src/smilodon.cr
