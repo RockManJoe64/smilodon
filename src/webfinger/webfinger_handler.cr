@@ -2,7 +2,8 @@ require "./../user/user_repository"
 
 module Smilodon::Webfinger
   class WebfingerHandler
-    def initialize(@repository : UserRepository)
+    # TODO: Modify HardWire to resolve abstract dependencies
+    def initialize(@repository : InMemoryUserRepository)
     end
 
     def find_account(resource : String)

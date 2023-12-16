@@ -1,18 +1,20 @@
-name: xolhut
+name: smilodon
 version: 0.1.0
 license: MIT
 
 authors:
   - Jose Chavez <jose.e.chavez@gmail.com>
 
-crystal: 1.6.2
+crystal: 1.10.1
 
 dependencies:
-  spec-kemal:
-    github: kemalcr/spec-kemal
+  hardwire:
+    github: rwnx/hardwire
   kemal:
     github: kemalcr/kemal
+  spec-kemal:
+    github: kemalcr/spec-kemal
 
 targets:
-  xolhut:
-    main: src/xolhut.cr
+  smilodon:
+    main: src/smilodon.cr
