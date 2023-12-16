@@ -1,13 +1,18 @@
 name: xolhut
 version: 0.1.0
+license: MIT
 
 authors:
   - Jose Chavez <jose.e.chavez@gmail.com>
 
+crystal: 1.6.2
+
+dependencies:
+  spec-kemal:
+    github: kemalcr/spec-kemal
+  kemal:
+    github: kemalcr/kemal
+
 targets:
   xolhut:
     main: src/xolhut.cr
-
-crystal: 1.6.2
-
-license: MIT
