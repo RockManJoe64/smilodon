@@ -1,7 +1,9 @@
 require "./../user/user_repository"
 
-module Smilodon::Webfinger
+module Webfinger
   class WebfingerHandler
+    include User
+
     def initialize(@repository : UserRepository)
     end
 

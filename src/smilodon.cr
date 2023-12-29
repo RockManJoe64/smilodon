@@ -4,8 +4,8 @@ require "./webfinger/webfinger_resource"
 
 # TODO: Write documentation for `Smilodon`
 module Smilodon
-  include Smilodon::User
-  include Smilodon::Webfinger
+  include User
+  include Webfinger
   VERSION = {{ `shards version #{__DIR__}`.chomp.stringify }}
 
   # TODO: Use dependency injection

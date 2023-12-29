@@ -1,4 +1,4 @@
-module Smilodon::User
+module User
   class User
     getter id : Int32
     getter username : String
