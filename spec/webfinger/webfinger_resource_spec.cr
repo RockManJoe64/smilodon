@@ -3,7 +3,7 @@ require "spec-kemal"
 require "../../src/smilodon"
 require "../../src/webfinger/webfinger_resource"
 
-include Smilodon::Webfinger
+include Webfinger
 
 describe WebfingerResource do
   describe "GET webfinger resource" do

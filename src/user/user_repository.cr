@@ -1,6 +1,6 @@
 require "./user"
 
-module Smilodon::User
+module User
   abstract class UserRepository
     abstract def find(username : String) : User?
   end

@@ -2,8 +2,8 @@ require "../spec_helper"
 require "../../src/user/user_repository"
 require "../../src/webfinger/webfinger_handler"
 
-include Smilodon::Webfinger
-include Smilodon::User
+include Webfinger
+include User
 
 describe WebfingerHandler do
   handler = WebfingerHandler.new(InMemoryUserRepository.new)

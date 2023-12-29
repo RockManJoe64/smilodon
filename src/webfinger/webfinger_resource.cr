@@ -1,7 +1,7 @@
 require "kemal"
 require "./webfinger_handler"
 
-module Smilodon::Webfinger
+module Webfinger
   # Defines Kemal routes for the Webfinger protocol
   class WebfingerResource
     def initialize(@webfinger_handler : WebfingerHandler)
